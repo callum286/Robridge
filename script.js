@@ -1,14 +1,36 @@
-const toggle = document.querySelector('.menu-toggle');
-const links = document.querySelector('.nav-links');
+const menuToggle = document.querySelector(".menu-toggle");
+const navLinks = document.querySelector(".nav-links");
 
-toggle?.addEventListener('click', () => {
-  const open = links.classList.toggle('open');
-  toggle.setAttribute('aria-expanded', open);
-});
+if (menuToggle && navLinks) {
 
-document.querySelectorAll('.nav-links a').forEach(a => {
-  a.addEventListener('click', () => links.classList.remove('open'));
-});
+  menuToggle.addEventListener("click", () => {
 
-// If the background video is missing, the dark gradient still gives the hero
-// a polished fallback. Add your own 16:9-ish MP4 as /hero.mp4.
+    const isOpen = navLinks.classList.toggle("open");
+
+    menuToggle.setAttribute(
+      "aria-expanded",
+      isOpen ? "true" : "false"
+    );
+
+    menuToggle.textContent = isOpen ? "✕" : "☰";
+
+  });
+
+  navLinks.querySelectorAll("a").forEach(link => {
+
+    link.addEventListener("click", () => {
+
+      navLinks.classList.remove("open");
+
+      menuToggle.setAttribute(
+        "aria-expanded",
+        "false"
+      );
+
+      menuToggle.textContent = "☰";
+
+    });
+
+  });
+
+}
