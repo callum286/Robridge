@@ -10,9 +10,9 @@
   --charcoal-soft:#343532;
 
   /* ROBRIDGE GREEN */
-  --accent:#6F806F;
-  --accent-dark:#536353;
-  --accent-light:#AAB7A8;
+  --accent:#A32127;
+  --accent-dark:#A32127;
+  --accent-light:#A32127;
 }
 
 *{
@@ -70,7 +70,7 @@ a{
   border:2px solid var(--accent);
   display:block;
   transform:rotate(45deg);
-  box-shadow:0 0 0 1px rgba(111,128,111,.08);
+  box-shadow:0 0 0 1px rgba(163,33,39,.08);
 }
 
 .nav-links{
@@ -94,7 +94,7 @@ a{
 }
 
 .nav-pill{
-  border:1px solid rgba(111,128,111,.75);
+  border:1px solid rgba(163,33,39,.75);
   padding:11px 17px;
   border-radius:100px;
 }
@@ -217,7 +217,7 @@ h2 em{
 .text-link{
   font-size:12px;
   font-weight:700;
-  border-bottom:1px solid rgba(111,128,111,.8);
+  border-bottom:1px solid rgba(163,33,39,.8);
   padding-bottom:4px;
 }
 
@@ -333,7 +333,7 @@ h2 span{
 }
 
 .project-card:hover{
-  border-color:rgba(111,128,111,.7);
+  border-color:rgba(163,33,39,.7);
   transform:translateY(-4px);
 }
 
@@ -369,7 +369,7 @@ h2 span{
 .crewfinder-image{
   background-image:
     linear-gradient(rgba(41,42,40,.08),rgba(41,42,40,.48)),
-    url("https://images.unsplash.com/photo-1790695904601-fc7c5a95091c?auto=format&fit=crop&w=1400&q=85");
+url("https://images.unsplash.com/photo-1772397677158-0b66fc93e85f?auto=format&fit=crop&w=1400&q=85");
   background-size:cover;
   background-position:center;
 }
