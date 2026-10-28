@@ -1,9 +1,13 @@
 :root{
-  --ink:#0b0d0e;
-  --paper:#f2f0eb;
-  --muted:#77756f;
-  --line:rgba(11,13,14,.14);
+  --ink:#292A28;
+  --paper:#F1EEE7;
+  --muted:#77756F;
+  --line:rgba(41,42,40,.14);
   --white:#fff;
+  --stone:#D9D7D1;
+  --charcoal:#292A28;
+  --charcoal-soft:#343532;
+  --accent:#006B3F;
 }
 
 *{
@@ -56,7 +60,7 @@ a{
 .brand-mark{
   width:25px;
   height:25px;
-  border:2px solid currentColor;
+  border:2px solid var(--accent);
   display:block;
   transform:rotate(45deg);
 }
@@ -78,6 +82,7 @@ a{
 
 .nav-links a:hover{
   opacity:1;
+  color:var(--accent);
 }
 
 .nav-pill{
@@ -102,7 +107,7 @@ a{
   min-height:680px;
   position:relative;
   overflow:hidden;
-  background:#111;
+  background:#292A28;
   color:#fff;
 }
 
@@ -185,12 +190,17 @@ h2 em{
 
 .button-light{
   background:#fff;
-  color:#111;
+  color:#292A28;
 }
 
 .button-dark{
-  background:#111;
+  background:#292A28;
   color:#fff;
+  transition:background .2s ease;
+}
+
+.button-dark:hover{
+  background:var(--accent);
 }
 
 .text-link{
@@ -254,7 +264,7 @@ h2 span{
 /* PROJECTS */
 
 .projects{
-  background:#111;
+  background:#292A28;
   color:#fff;
 }
 
@@ -284,7 +294,7 @@ h2 span{
 }
 
 .project-card{
-  background:#1a1b1c;
+  background:#343532;
   border:1px solid rgba(255,255,255,.08);
   min-height:540px;
   display:flex;
@@ -360,6 +370,11 @@ h2 span{
   font-weight:800;
   letter-spacing:.1em;
   text-transform:uppercase;
+  transition:color .2s ease;
+}
+
+.project-body a:hover{
+  color:var(--accent);
 }
 
 
@@ -427,7 +442,7 @@ h2 span{
 .journal-row{
   width:100%;
   min-height:150px;
-  background:#111;
+  background:#292A28;
   color:#fff;
   display:grid;
   grid-template-columns:80px 1fr 60px;
@@ -441,7 +456,7 @@ h2 span{
 }
 
 .journal-row:hover{
-  background:#1c1d1e;
+  background:#3B3C39;
   padding-left:45px;
 }
 
@@ -478,6 +493,7 @@ h2 span{
 
 .journal-row:hover .journal-arrow{
   transform:translate(5px,-5px);
+  color:var(--accent);
 }
 
 
@@ -492,7 +508,7 @@ h2 span{
 /* BLACK ARTICLE HERO */
 
 .article-hero{
-  background:#111;
+  background:#292A28;
   color:#fff;
   padding:190px 9vw 90px;
 }
@@ -561,7 +577,7 @@ h2 span{
 .article-placeholder{
   padding:30px;
   background:#e3e0d9;
-  border-left:3px solid #111;
+  border-left:3px solid #292A28;
   margin:30px 0;
 }
 
@@ -575,7 +591,7 @@ h2 span{
 /* CONTACT */
 
 .contact{
-  background:#111;
+  background:#292A28;
   color:#fff;
   text-align:center;
   padding-top:150px;
@@ -607,9 +623,9 @@ h2 span{
 /* FOOTER */
 
 footer{
-  background:#111;
+  background:#292A28;
   color:#777;
-  border-top:1px solid #292929;
+  border-top:1px solid #42433F;
   padding:28px 5vw;
   display:flex;
   justify-content:space-between;
@@ -648,7 +664,7 @@ footer{
     top:68px;
     left:0;
     right:0;
-    background:#111;
+    background:#292A28;
     padding:25px 6vw;
     flex-direction:column;
     align-items:flex-start;
