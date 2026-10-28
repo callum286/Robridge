@@ -1,4 +1,3 @@
-```css
 :root{
   --ink:#292A28;
   --paper:#F1EEE7;
@@ -9,7 +8,7 @@
   --charcoal:#292A28;
   --charcoal-soft:#343532;
 
-  /* ROBRIDGE GREEN */
+  /* ROBRIDGE RED */
   --accent:#A32127;
   --accent-dark:#A32127;
   --accent-light:#A32127;
@@ -285,7 +284,6 @@ h2 span{
   position:relative;
 }
 
-/* subtle green rule at the top */
 .projects:before{
   content:"";
   position:absolute;
@@ -365,26 +363,32 @@ h2 span{
   color:#fff;
 }
 
-/* CREWFINDER — high performance sailing */
+
+/* CREWFINDER */
+
 .crewfinder-image{
   background-image:
     linear-gradient(rgba(41,42,40,.08),rgba(41,42,40,.48)),
-url("https://images.unsplash.com/photo-1772397677158-0b66fc93e85f?auto=format&fit=crop&w=1400&q=85");
+    url("https://images.unsplash.com/photo-1790695904601-fc7c5a95091c?auto=format&fit=crop&w=1400&q=85");
   background-size:cover;
   background-position:center;
 }
 
-/* DINGHY — Nacra / 49er style racing image */
+
+/* DINGHY */
+
 .dinghy-image{
   background-image:
     linear-gradient(rgba(41,42,40,.05),rgba(41,42,40,.42)),
-    url("https://unsplash.com/photos/sailboats-race-on-the-water-at-sunset-JS0bSDQOUuQ");
+    url("https://images.unsplash.com/photo-1772397677158-0b66fc93e85f?auto=format&fit=crop&fm=jpg&q=85&w=1400");
   background-size:cover;
   background-position:center;
 }
 
-/* TRAINING — performance / foiling */
-.project-card:nth-child(3) .project-image{
+
+/* TRAINING */
+
+.training-image{
   background-image:
     linear-gradient(rgba(41,42,40,.08),rgba(41,42,40,.48)),
     url("https://images.unsplash.com/photo-1467818488384-3a21f2b79959?auto=format&fit=crop&w=1400&q=85");
@@ -392,7 +396,9 @@ url("https://images.unsplash.com/photo-1772397677158-0b66fc93e85f?auto=format&fi
   background-position:center;
 }
 
+
 /* WHAT'S NEXT */
+
 .future-image{
   background-image:
     linear-gradient(rgba(41,42,40,.05),rgba(41,42,40,.45)),
@@ -842,4 +848,3 @@ footer{
   }
 
 }
-```
