@@ -1,3 +1,4 @@
+```css
 :root{
   --ink:#292A28;
   --paper:#F1EEE7;
@@ -7,7 +8,11 @@
   --stone:#D9D7D1;
   --charcoal:#292A28;
   --charcoal-soft:#343532;
-  --accent:#59665C;
+
+  /* ROBRIDGE GREEN */
+  --accent:#6F806F;
+  --accent-dark:#536353;
+  --accent-light:#AAB7A8;
 }
 
 *{
@@ -31,7 +36,9 @@ a{
 }
 
 
-/* NAVIGATION */
+/* =========================
+   NAVIGATION
+========================= */
 
 .nav{
   position:fixed;
@@ -63,6 +70,7 @@ a{
   border:2px solid var(--accent);
   display:block;
   transform:rotate(45deg);
+  box-shadow:0 0 0 1px rgba(111,128,111,.08);
 }
 
 .nav-links{
@@ -82,11 +90,11 @@ a{
 
 .nav-links a:hover{
   opacity:1;
-  color:var(--accent);
+  color:var(--accent-light);
 }
 
 .nav-pill{
-  border:1px solid rgba(255,255,255,.5);
+  border:1px solid rgba(111,128,111,.75);
   padding:11px 17px;
   border-radius:100px;
 }
@@ -95,12 +103,14 @@ a{
   display:none;
   background:none;
   border:0;
-  color:var(--accent);
+  color:var(--accent-light);
   font-size:25px;
 }
 
 
-/* HERO */
+/* =========================
+   HERO
+========================= */
 
 .hero{
   height:100svh;
@@ -145,6 +155,7 @@ a{
 
 .eyebrow{
   margin-bottom:22px;
+  color:var(--accent-light);
 }
 
 h1{
@@ -200,13 +211,13 @@ h2 em{
 }
 
 .button-dark:hover{
-  background:var(--accent);
+  background:var(--accent-dark);
 }
 
 .text-link{
   font-size:12px;
   font-weight:700;
-  border-bottom:1px solid rgba(255,255,255,.5);
+  border-bottom:1px solid rgba(111,128,111,.8);
   padding-bottom:4px;
 }
 
@@ -222,10 +233,13 @@ h2 em{
 .scroll-hint span{
   margin-left:15px;
   font-size:15px;
+  color:var(--accent-light);
 }
 
 
-/* GENERAL SECTIONS */
+/* =========================
+   GENERAL SECTIONS
+========================= */
 
 .section{
   padding:130px 9vw;
@@ -246,7 +260,7 @@ h2{
 }
 
 h2 span{
-  color:#85837d;
+  color:var(--accent-dark);
 }
 
 .lead{
@@ -257,15 +271,29 @@ h2 span{
 }
 
 .section-label{
-  color:var(--muted);
+  color:var(--accent-dark);
 }
 
 
-/* PROJECTS */
+/* =========================
+   PROJECTS
+========================= */
 
 .projects{
   background:#292A28;
   color:#F1EEE7;
+  position:relative;
+}
+
+/* subtle green rule at the top */
+.projects:before{
+  content:"";
+  position:absolute;
+  top:0;
+  left:9vw;
+  width:90px;
+  height:3px;
+  background:var(--accent);
 }
 
 .section-head{
@@ -299,6 +327,14 @@ h2 span{
   min-height:540px;
   display:flex;
   flex-direction:column;
+  transition:
+    border-color .25s ease,
+    transform .25s ease;
+}
+
+.project-card:hover{
+  border-color:rgba(111,128,111,.7);
+  transform:translateY(-4px);
 }
 
 .project-image{
@@ -313,7 +349,9 @@ h2 span{
   content:"";
   position:absolute;
   inset:0;
-  background:linear-gradient(135deg,transparent,rgba(0,0,0,.45));
+  background:
+    linear-gradient(135deg,transparent 35%,rgba(0,0,0,.5)),
+    linear-gradient(0deg,rgba(41,42,40,.35),transparent 60%);
 }
 
 .project-image span{
@@ -324,36 +362,41 @@ h2 span{
   font-size:10px;
   font-weight:700;
   letter-spacing:.1em;
+  color:#fff;
 }
 
+/* CREWFINDER — high performance sailing */
 .crewfinder-image{
   background-image:
-    linear-gradient(rgba(41,42,40,.18),rgba(41,42,40,.45)),
+    linear-gradient(rgba(41,42,40,.08),rgba(41,42,40,.48)),
     url("https://images.unsplash.com/photo-1790695904601-fc7c5a95091c?auto=format&fit=crop&w=1400&q=85");
   background-size:cover;
   background-position:center;
 }
 
+/* DINGHY — Nacra / 49er style racing image */
 .dinghy-image{
   background-image:
-    linear-gradient(rgba(41,42,40,.12),rgba(41,42,40,.42)),
-    url("https://images.unsplash.com/photo-1767699819464-01f248ba3b85?auto=format&fit=crop&w=1200&q=85");
+    linear-gradient(rgba(41,42,40,.05),rgba(41,42,40,.42)),
+    url("https://images.unsplash.com/photo-1767699819464-01f248ba3b85?auto=format&fit=crop&w=1400&q=85");
   background-size:cover;
   background-position:center;
 }
 
+/* TRAINING — performance / foiling */
 .project-card:nth-child(3) .project-image{
   background-image:
-    linear-gradient(rgba(41,42,40,.18),rgba(41,42,40,.48)),
-    url("https://images.unsplash.com/photo-1467818488384-3a21f2b79959?auto=format&fit=crop&w=1200&q=85");
+    linear-gradient(rgba(41,42,40,.08),rgba(41,42,40,.48)),
+    url("https://images.unsplash.com/photo-1467818488384-3a21f2b79959?auto=format&fit=crop&w=1400&q=85");
   background-size:cover;
   background-position:center;
 }
 
+/* WHAT'S NEXT */
 .future-image{
   background-image:
-    linear-gradient(rgba(41,42,40,.15),rgba(41,42,40,.45)),
-    url("https://images.unsplash.com/photo-1763653740009-cc47d761ccb3?auto=format&fit=crop&w=1200&q=85");
+    linear-gradient(rgba(41,42,40,.05),rgba(41,42,40,.45)),
+    url("https://images.unsplash.com/photo-1763653740009-cc47d761ccb3?auto=format&fit=crop&w=1400&q=85");
   background-size:cover;
   background-position:center;
 }
@@ -366,7 +409,7 @@ h2 span{
 }
 
 .project-meta{
-  color:#777;
+  color:var(--accent-light);
   line-height:1.5;
 }
 
@@ -393,11 +436,13 @@ h2 span{
 }
 
 .project-body a:hover{
-  color:var(--accent);
+  color:var(--accent-light);
 }
 
 
-/* IMPACT */
+/* =========================
+   IMPACT
+========================= */
 
 .impact{
   background:#d9d7d1;
@@ -422,7 +467,7 @@ h2 span{
 .stats{
   display:grid;
   grid-template-columns:repeat(3,1fr);
-  border-top:1px solid var(--line);
+  border-top:1px solid var(--accent);
   margin-top:70px;
 }
 
@@ -441,11 +486,13 @@ h2 span{
   font-size:9px;
   letter-spacing:.12em;
   font-weight:700;
-  color:var(--muted);
+  color:var(--accent-dark);
 }
 
 
-/* JOURNAL */
+/* =========================
+   JOURNAL
+========================= */
 
 .journal{
   background:var(--paper);
@@ -453,11 +500,8 @@ h2 span{
 
 .journal-list{
   width:100%;
-  border-top:1px solid var(--ink);
+  border-top:2px solid var(--accent);
 }
-
-
-/* BLACK ARTICLE STRIPES */
 
 .journal-row{
   width:100%;
@@ -472,19 +516,21 @@ h2 span{
   border-bottom:1px solid rgba(255,255,255,.12);
   transition:
     background .25s ease,
-    padding .25s ease;
+    padding .25s ease,
+    border-color .25s ease;
 }
 
 .journal-row:hover{
   background:#3B3C39;
   padding-left:45px;
+  border-bottom-color:var(--accent);
 }
 
 .journal-number{
   font-size:11px;
   font-weight:700;
   letter-spacing:.12em;
-  color:#777;
+  color:var(--accent-light);
 }
 
 .journal-info{
@@ -493,7 +539,7 @@ h2 span{
 
 .journal-info .article-date{
   margin:0 0 12px;
-  color:#777;
+  color:var(--accent-light);
 }
 
 .journal-info h3{
@@ -513,24 +559,24 @@ h2 span{
 
 .journal-row:hover .journal-arrow{
   transform:translate(5px,-5px);
-  color:var(--accent);
+  color:var(--accent-light);
 }
 
 
-/* ARTICLE PAGES */
+/* =========================
+   ARTICLE PAGES
+========================= */
 
 .article-page{
   background:var(--paper);
   min-height:100vh;
 }
 
-
-/* BLACK ARTICLE HERO */
-
 .article-hero{
   background:#292A28;
   color:#fff;
   padding:190px 9vw 90px;
+  border-bottom:3px solid var(--accent);
 }
 
 .article-hero-inner{
@@ -538,7 +584,7 @@ h2 span{
 }
 
 .article-hero .article-date{
-  color:#777;
+  color:var(--accent-light);
   margin:0 0 25px;
 }
 
@@ -589,7 +635,7 @@ h2 span{
   font-weight:700;
   letter-spacing:.1em;
   text-transform:uppercase;
-  border-bottom:1px solid rgba(255,255,255,.4);
+  border-bottom:1px solid var(--accent);
   padding-bottom:6px;
   margin-top:55px;
 }
@@ -597,7 +643,7 @@ h2 span{
 .article-placeholder{
   padding:30px;
   background:#e3e0d9;
-  border-left:3px solid #292A28;
+  border-left:3px solid var(--accent);
   margin:30px 0;
 }
 
@@ -608,7 +654,9 @@ h2 span{
 }
 
 
-/* CONTACT */
+/* =========================
+   CONTACT
+========================= */
 
 .contact{
   background:#292A28;
@@ -616,6 +664,7 @@ h2 span{
   text-align:center;
   padding-top:150px;
   padding-bottom:150px;
+  border-top:3px solid var(--accent);
 }
 
 .contact-inner{
@@ -624,7 +673,7 @@ h2 span{
 }
 
 .contact .section-label{
-  color:#777;
+  color:var(--accent-light);
 }
 
 .contact h2{
@@ -640,7 +689,9 @@ h2 span{
 }
 
 
-/* FOOTER */
+/* =========================
+   FOOTER
+========================= */
 
 footer{
   background:#292A28;
@@ -660,12 +711,14 @@ footer{
 }
 
 .footer-brand span{
-  color:#777;
+  color:var(--accent-light);
   margin-left:8px;
 }
 
 
-/* MOBILE */
+/* =========================
+   MOBILE
+========================= */
 
 @media(max-width:850px){
 
@@ -738,9 +791,6 @@ footer{
     margin-top:40px;
   }
 
-
-  /* JOURNAL MOBILE */
-
   .journal-row{
     min-height:135px;
     grid-template-columns:45px 1fr 35px;
@@ -759,9 +809,6 @@ footer{
   .journal-arrow{
     font-size:20px;
   }
-
-
-  /* ARTICLE MOBILE */
 
   .article-hero{
     padding:145px 7vw 70px;
@@ -795,3 +842,4 @@ footer{
   }
 
 }
+```
