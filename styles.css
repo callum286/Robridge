@@ -1,4 +1,3 @@
-
 :root{
   --ink:#292A28;
   --paper:#F1EEE7;
@@ -8,7 +7,7 @@
   --stone:#D9D7D1;
   --charcoal:#292A28;
   --charcoal-soft:#343532;
-  --accent:#006B3F;
+  --accent:#59665C;
 }
 
 *{
@@ -53,8 +52,8 @@ a{
   display:flex;
   gap:12px;
   align-items:center;
-  font-weight:900;
-  letter-spacing:.16em;
+  font-weight:700;
+  letter-spacing:.14em;
   font-size:14px;
 }
 
@@ -96,7 +95,7 @@ a{
   display:none;
   background:none;
   border:0;
-  color:#006B3F;
+  color:var(--accent);
   font-size:25px;
 }
 
@@ -109,7 +108,7 @@ a{
   position:relative;
   overflow:hidden;
   background:#292A28;
-  color:#006B3F;
+  color:#F1EEE7;
 }
 
 .hero-video{
@@ -141,7 +140,7 @@ a{
 .article-date{
   font-size:10px;
   letter-spacing:.16em;
-  font-weight:800;
+  font-weight:700;
 }
 
 .eyebrow{
@@ -153,7 +152,7 @@ h1{
   line-height:.88;
   letter-spacing:-.065em;
   margin:0;
-  font-weight:900;
+  font-weight:700;
 }
 
 h1 em,
@@ -183,7 +182,7 @@ h2 em{
   gap:20px;
   padding:15px 20px;
   font-size:11px;
-  font-weight:800;
+  font-weight:700;
   letter-spacing:.1em;
   text-transform:uppercase;
   border-radius:100px;
@@ -196,7 +195,7 @@ h2 em{
 
 .button-dark{
   background:#292A28;
-  color:#006B3F;
+  color:#F1EEE7;
   transition:background .2s ease;
 }
 
@@ -217,7 +216,7 @@ h2 em{
   right:5vw;
   font-size:9px;
   letter-spacing:.16em;
-  font-weight:800;
+  font-weight:700;
 }
 
 .scroll-hint span{
@@ -241,9 +240,9 @@ h2 em{
 h2{
   font-size:clamp(44px,6vw,90px);
   line-height:.95;
-  letter-spacing:-.06em;
+  letter-spacing:-.055em;
   margin:0 0 35px;
-  font-weight:900;
+  font-weight:700;
 }
 
 h2 span{
@@ -266,7 +265,7 @@ h2 span{
 
 .projects{
   background:#292A28;
-  color:#006B3F;
+  color:#F1EEE7;
 }
 
 .section-head{
@@ -306,6 +305,8 @@ h2 span{
   height:280px;
   position:relative;
   overflow:hidden;
+  background-size:cover;
+  background-position:center;
 }
 
 .project-image:after{
@@ -321,24 +322,40 @@ h2 span{
   top:20px;
   left:20px;
   font-size:10px;
-  font-weight:800;
+  font-weight:700;
   letter-spacing:.1em;
 }
 
 .crewfinder-image{
-  background:
-    radial-gradient(circle at 65% 30%,#9db9be 0 2%,transparent 3%),
-    linear-gradient(135deg,#173d49,#0a171b 70%);
+  background-image:
+    linear-gradient(rgba(41,42,40,.18),rgba(41,42,40,.45)),
+    url("https://images.unsplash.com/photo-1790695904601-fc7c5a95091c?auto=format&fit=crop&w=1400&q=85");
+  background-size:cover;
+  background-position:center;
 }
 
 .dinghy-image{
-  background:
-    linear-gradient(145deg,#c5d2cf,#49656a 45%,#101a1c);
+  background-image:
+    linear-gradient(rgba(41,42,40,.12),rgba(41,42,40,.42)),
+    url("https://images.unsplash.com/photo-1767699819464-01f248ba3b85?auto=format&fit=crop&w=1200&q=85");
+  background-size:cover;
+  background-position:center;
+}
+
+.project-card:nth-child(3) .project-image{
+  background-image:
+    linear-gradient(rgba(41,42,40,.18),rgba(41,42,40,.48)),
+    url("https://images.unsplash.com/photo-1467818488384-3a21f2b79959?auto=format&fit=crop&w=1200&q=85");
+  background-size:cover;
+  background-position:center;
 }
 
 .future-image{
-  background:
-    linear-gradient(135deg,#ded9cc,#686762 45%,#141414);
+  background-image:
+    linear-gradient(rgba(41,42,40,.15),rgba(41,42,40,.45)),
+    url("https://images.unsplash.com/photo-1763653740009-cc47d761ccb3?auto=format&fit=crop&w=1200&q=85");
+  background-size:cover;
+  background-position:center;
 }
 
 .project-body{
@@ -357,6 +374,7 @@ h2 span{
   font-size:32px;
   letter-spacing:-.04em;
   margin:16px 0 12px;
+  font-weight:700;
 }
 
 .project-body p{
@@ -368,7 +386,7 @@ h2 span{
 .project-body a{
   margin-top:auto;
   font-size:11px;
-  font-weight:800;
+  font-weight:700;
   letter-spacing:.1em;
   text-transform:uppercase;
   transition:color .2s ease;
@@ -416,12 +434,13 @@ h2 span{
   display:block;
   font-size:45px;
   letter-spacing:-.05em;
+  font-weight:700;
 }
 
 .stats span{
   font-size:9px;
   letter-spacing:.12em;
-  font-weight:800;
+  font-weight:700;
   color:var(--muted);
 }
 
@@ -463,7 +482,7 @@ h2 span{
 
 .journal-number{
   font-size:11px;
-  font-weight:800;
+  font-weight:700;
   letter-spacing:.12em;
   color:#777;
 }
@@ -482,7 +501,7 @@ h2 span{
   font-size:clamp(24px,3vw,42px);
   line-height:1;
   letter-spacing:-.045em;
-  font-weight:800;
+  font-weight:700;
 }
 
 .journal-arrow{
@@ -567,7 +586,7 @@ h2 span{
   align-items:center;
   gap:12px;
   font-size:11px;
-  font-weight:800;
+  font-weight:700;
   letter-spacing:.1em;
   text-transform:uppercase;
   border-bottom:1px solid rgba(255,255,255,.4);
@@ -637,7 +656,7 @@ footer{
 
 .footer-brand{
   color:#fff;
-  font-weight:900;
+  font-weight:700;
 }
 
 .footer-brand span{
@@ -719,6 +738,7 @@ footer{
     margin-top:40px;
   }
 
+
   /* JOURNAL MOBILE */
 
   .journal-row{
@@ -739,6 +759,7 @@ footer{
   .journal-arrow{
     font-size:20px;
   }
+
 
   /* ARTICLE MOBILE */
 
