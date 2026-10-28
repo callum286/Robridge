@@ -95,7 +95,7 @@ a{
   display:none;
   background:none;
   border:0;
-  color:#fff;
+  color:#006B3F;
   font-size:25px;
 }
 
@@ -108,7 +108,7 @@ a{
   position:relative;
   overflow:hidden;
   background:#292A28;
-  color:#fff;
+  color:#006B3F;
 }
 
 .hero-video{
@@ -195,7 +195,7 @@ h2 em{
 
 .button-dark{
   background:#292A28;
-  color:#fff;
+  color:#006B3F;
   transition:background .2s ease;
 }
 
@@ -265,7 +265,7 @@ h2 span{
 
 .projects{
   background:#292A28;
-  color:#fff;
+  color:#006B3F;
 }
 
 .section-head{
