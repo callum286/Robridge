@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Robridge Performance Sunglasses. Designed for life on and off the water.">
+  <title>Performance Sunglasses | Robridge</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="shop.css">
+</head>
+<body class="shop-page product-page">
+
+  <header class="nav shop-nav">
+    <a class="brand" href="index.html" aria-label="Robridge home">
+      <span class="brand-mark"></span>
+      <span>ROBRIDGE</span>
+    </a>
+    <button class="menu-toggle" aria-label="Open menu" aria-expanded="false">☰</button>
+    <nav class="nav-links" aria-label="Main navigation">
+      <a href="index.html#about">About</a>
+      <a href="index.html#projects">Projects</a>
+      <a href="index.html#athletes">Athletes</a>
+      <a href="index.html#journal">Journal</a>
+      <a href="index.html#contact">Contact</a>
+      <a class="shop-nav-current" href="shop.html">Shop</a>
+    </nav>
+    <button class="bag-link" type="button" data-open-bag aria-label="Open shopping bag">
+      BAG <span data-bag-count>0</span>
+    </button>
+  </header>
+
+  <main class="product-layout">
+
+    <div class="product-gallery">
+      <div class="gallery-main" data-product-visual>
+        <span class="image-placeholder">MAIN PRODUCT IMAGE</span>
+      </div>
+      <div class="gallery-secondary">
+        <div><span class="image-placeholder">DETAIL IMAGE</span></div>
+        <div><span class="image-placeholder">ON-WATER IMAGE</span></div>
+      </div>
+    </div>
+
+    <section class="product-details">
+      <a class="back-to-shop" href="shop.html">← BACK TO EYEWEAR</a>
+      <p class="shop-kicker product-kicker">ROBRIDGE / PERFORMANCE EYEWEAR</p>
+      <h1>Performance<br><em>Sunglasses.</em></h1>
+      <p class="detail-price">£34.99</p>
+      <p class="detail-description">
+        Designed for long days on the water and everything beyond.
+        A considered, performance-led essential from Robridge.
+      </p>
+
+      <div class="variant-block">
+        <span class="variant-label">FRAME / LENS — <strong data-selected-colour>BLACK / BLUE MIRROR</strong></span>
+        <div class="variant-options">
+          <button class="variant-option selected" type="button" data-colour="blue" aria-label="Black frame with blue mirrored lenses" aria-pressed="true">
+            <span class="swatch swatch-blue"></span>
+            <span>Blue Mirror</span>
+          </button>
+          <button class="variant-option" type="button" data-colour="orange" aria-label="Black frame with orange mirrored lenses" aria-pressed="false">
+            <span class="swatch swatch-orange"></span>
+            <span>Orange Mirror</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="quantity-row">
+        <span class="variant-label">QUANTITY</span>
+        <div class="quantity-control">
+          <button type="button" data-quantity-minus aria-label="Decrease quantity">−</button>
+          <output data-quantity>1</output>
+          <button type="button" data-quantity-plus aria-label="Increase quantity">+</button>
+        </div>
+      </div>
+
+      <button class="add-to-bag" type="button" data-add-to-bag>
+        ADD TO BAG <span>↗</span>
+      </button>
+
+      <p class="detail-smallprint">Includes Robridge pouch and protective EVA case.</p>
+
+      <div class="product-accordions">
+        <details>
+          <summary>PRODUCT DETAILS <span>＋</span></summary>
+          <p>Performance sunglasses from Robridge. Product specifications and care information will be added here.</p>
+        </details>
+        <details>
+          <summary>DELIVERY & RETURNS <span>＋</span></summary>
+          <p>Delivery and returns information will be confirmed before checkout is enabled.</p>
+        </details>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="shop-footer">
+    <a class="footer-brand" href="index.html">ROBRIDGE <span>WATERSPORTS</span></a>
+    <span>© 2026 ROBRIDGE</span>
+    <a href="index.html#contact">CONTACT ↗</a>
+  </footer>
+
+  <aside class="bag-drawer" data-bag-drawer aria-hidden="true">
+    <div class="bag-backdrop" data-close-bag></div>
+    <section class="bag-panel" role="dialog" aria-modal="true" aria-label="Shopping bag">
+      <div class="bag-heading">
+        <div>
+          <p class="shop-kicker">ROBRIDGE / YOUR ORDER</p>
+          <h2>Your bag <span data-bag-count>0</span></h2>
+        </div>
+        <button class="bag-close" type="button" data-close-bag aria-label="Close bag">×</button>
+      </div>
+      <div class="bag-items" data-bag-items>
+        <p class="bag-empty">Your bag is currently empty.</p>
+      </div>
+      <div class="bag-bottom">
+        <div class="bag-total">
+          <span>Subtotal</span>
+          <strong data-bag-total>£0.00</strong>
+        </div>
+        <p class="bag-shipping-note">Shipping calculated at checkout.</p>
+        <button class="checkout-button" type="button" disabled>CHECKOUT — COMING SOON</button>
+        <p class="checkout-caption">Secure online checkout will be available soon.</p>
+      </div>
+    </section>
+  </aside>
+
+  <script src="script.js"></script>
+  <script src="shop.js"></script>
+</body>
+</html>
