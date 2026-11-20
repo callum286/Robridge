@@ -1,55 +1,108 @@
 
-// ==========================================
-// ROBRIDGE — STRIPE CHECKOUT
-// ==========================================
+/* ==========================================
+   ROBRIDGE — PRODUCT & STRIPE CHECKOUT
+========================================== */
 
-const STRIPE_CHECKOUT_URL =
-  "https://buy.stripe.com/fZu9AS9fVa8G4T108H7EQ00";
+// Stripe payment links
 
-// Only the blue sunglasses are available for now.
+const stripeLinks = {
+  blue: "https://buy.stripe.com/fZu9AS9fVa8G4T108H7EQ00",
+  orange: "https://buy.stripe.com/8x2bJ04ZFdkSgBJ9Jh7EQ01"
+};
 
-// Hide the old shopping bag button
-document.querySelectorAll("[data-open-bag]").forEach(button => {
-  button.style.display = "none";
+// Product elements
+
+const colourButtons = document.querySelectorAll("[data-colour]");
+const selectedColourText = document.querySelector("[data-selected-colour]");
+const productVisual = document.querySelector("[data-product-visual]");
+const buyButton = document.querySelector("#buy-now");
+
+// Default colour
+
+let selectedColour = "blue";
+
+// Select product colour
+
+function selectColour(colour) {
+
+  if (!stripeLinks[colour]) return;
+
+  selectedColour = colour;
+
+  // Update selected colour buttons
+
+  colourButtons.forEach(button => {
+
+    const selected = button.dataset.colour === colour;
+
+    button.classList.toggle("selected", selected);
+
+    button.setAttribute(
+      "aria-pressed",
+      selected ? "true" : "false"
+    );
+
+  });
+
+  // Update colour description
+
+  if (selectedColourText) {
+
+    selectedColourText.textContent =
+      colour === "orange"
+        ? "BLACK / ORANGE MIRROR"
+        : "BLACK / BLUE MIRROR";
+
+  }
+
+  // Update product visual class
+
+  if (productVisual) {
+
+    productVisual.classList.toggle(
+      "visual-orange",
+      colour === "orange"
+    );
+
+    productVisual.classList.toggle(
+      "visual-blue",
+      colour === "blue"
+    );
+
+  }
+
+}
+
+// Listen for colour selection
+
+colourButtons.forEach(button => {
+
+  button.addEventListener("click", () => {
+
+    selectColour(button.dataset.colour);
+
+  });
+
 });
 
-// Hide the old shopping bag drawer
-document.querySelectorAll("[data-bag-drawer]").forEach(drawer => {
-  drawer.style.display = "none";
-});
-
-// Hide the orange colour option
-document.querySelectorAll('[data-colour="orange"]').forEach(button => {
-  button.style.display = "none";
-});
-
-// Select blue automatically
-document.querySelectorAll("[data-colour]").forEach(button => {
-  const selected = button.dataset.colour === "blue";
-
-  button.classList.toggle("selected", selected);
-  button.setAttribute("aria-pressed", selected ? "true" : "false");
-});
-
-// Update selected colour text
-document.querySelectorAll("[data-selected-colour]").forEach(element => {
-  element.textContent = "BLACK / BLUE MIRROR";
-});
-
-// Remove the old quantity selector
-document.querySelectorAll(
-  "[data-quantity-minus], [data-quantity-plus], [data-quantity]"
-).forEach(element => {
-  element.style.display = "none";
-});
-
-// Change the purchase button and connect Stripe
-const buyButton = document.querySelector("[data-add-to-bag]");
+// Buy now button
 
 if (buyButton) {
-  buyButton.innerHTML = 'BUY NOW <span>↗</span>';
 
   buyButton.addEventListener("click", () => {
-    window.location.href = STRIPE_CHECKOUT_URL;
+
+    const checkoutLink = stripeLinks[selectedColour];
+
+    if (checkoutLink) {
+
+      window.location.href = checkoutLink;
+
+    }
+
   });
+
 }
+
+// Start with blue selected
+
+selectColour("blue");
