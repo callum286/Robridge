@@ -18,6 +18,7 @@
 <body class="shop-page product-page">
 
   <header class="nav shop-nav">
+
     <a class="brand" href="index.html" aria-label="Robridge home">
       <span class="brand-mark"></span>
       <span>ROBRIDGE</span>
@@ -31,6 +32,7 @@
 
     <nav class="menu-overlay" aria-label="Main navigation">
       <div class="menu-inner">
+
         <p class="menu-kicker">ROBRIDGE / EXPLORE</p>
 
         <div class="menu-links">
@@ -47,28 +49,39 @@
           <span>BUILT FOR THE WATER.</span>
           <span>© 2026 ROBRIDGE</span>
         </div>
+
       </div>
     </nav>
+
   </header>
 
   <main class="product-layout">
 
     <div class="product-gallery">
-      <div class="gallery-main" data-product-visual>
+
+      <div class="gallery-main visual-blue" data-product-visual>
         <span class="image-placeholder">MAIN PRODUCT IMAGE</span>
       </div>
 
       <div class="gallery-secondary">
-        <div><span class="image-placeholder">DETAIL IMAGE</span></div>
-        <div><span class="image-placeholder">ON-WATER IMAGE</span></div>
+        <div>
+          <span class="image-placeholder">DETAIL IMAGE</span>
+        </div>
+
+        <div>
+          <span class="image-placeholder">ON-WATER IMAGE</span>
+        </div>
       </div>
+
     </div>
 
     <section class="product-details">
 
       <a class="back-to-shop" href="shop.html">← BACK TO EYEWEAR</a>
 
-      <p class="shop-kicker product-kicker">ROBRIDGE / PERFORMANCE EYEWEAR</p>
+      <p class="shop-kicker product-kicker">
+        ROBRIDGE / PERFORMANCE EYEWEAR
+      </p>
 
       <h1>Performance<br><em>Sunglasses.</em></h1>
 
@@ -80,28 +93,40 @@
       </p>
 
       <div class="variant-block">
+
         <span class="variant-label">
-          FRAME / LENS — <strong>BLACK / BLUE MIRROR</strong>
+          FRAME / LENS — <strong data-selected-colour>BLACK / BLUE MIRROR</strong>
         </span>
 
         <div class="variant-options">
+
           <button
             class="variant-option selected"
             type="button"
+            data-colour="blue"
             aria-label="Black frame with blue mirrored lenses"
             aria-pressed="true"
           >
             <span class="swatch swatch-blue"></span>
             <span>Blue Mirror</span>
           </button>
+
+          <button
+            class="variant-option"
+            type="button"
+            data-colour="orange"
+            aria-label="Black frame with orange mirrored lenses"
+            aria-pressed="false"
+          >
+            <span class="swatch swatch-orange"></span>
+            <span>Orange Mirror</span>
+          </button>
+
         </div>
+
       </div>
 
-      <button
-        class="add-to-bag"
-        type="button"
-        id="buy-now"
-      >
+      <button class="add-to-bag" type="button" id="buy-now">
         BUY NOW <span>↗</span>
       </button>
 
@@ -113,6 +138,7 @@
 
         <details>
           <summary>PRODUCT DETAILS <span>＋</span></summary>
+
           <p>
             Performance sunglasses from Robridge. Product specifications
             and care information will be added here.
@@ -121,6 +147,7 @@
 
         <details>
           <summary>DELIVERY & RETURNS <span>＋</span></summary>
+
           <p>
             UK delivery via Royal Mail Tracked 48. Estimated delivery
             within 2–3 working days after dispatch. Tracking provided
@@ -135,30 +162,19 @@
   </main>
 
   <footer class="shop-footer">
+
     <a class="footer-brand" href="index.html">
       ROBRIDGE <span>WATERSPORTS</span>
     </a>
 
     <span>© 2026 ROBRIDGE</span>
+
     <a href="index.html#contact">CONTACT ↗</a>
+
   </footer>
 
   <script src="script.js"></script>
-
-  <script>
-    // ROBRIDGE — STRIPE CHECKOUT
-
-    const stripeCheckout =
-      "https://buy.stripe.com/fZu9AS9fVa8G4T108H7EQ00";
-
-    const buyButton = document.getElementById("buy-now");
-
-    if (buyButton) {
-      buyButton.addEventListener("click", function () {
-        window.location.href = stripeCheckout;
-      });
-    }
-  </script>
+  <script src="shop.js"></script>
 
 </body>
 </html>
