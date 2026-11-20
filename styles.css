@@ -818,26 +818,30 @@ footer {
   top: 0;
   left: 0;
   z-index: 99999;
-  width: 46px;
-  height: 46px;
-  border: 1px solid rgba(255,255,255,.95);
+  width: 30px;
+  height: 30px;
+  border: 1px solid rgba(241,238,231,.8);
   border-radius: 50%;
+  background: transparent;
   pointer-events: none;
   opacity: 0;
   mix-blend-mode: difference;
-  transform: translate(-50%,-50%);
-  transition: opacity .2s ease, width .35s ease, height .35s ease;
+  transform: translate(-50%, -50%);
+  transition:
+    opacity .25s ease,
+    width .45s cubic-bezier(.22,1,.36,1),
+    height .45s cubic-bezier(.22,1,.36,1);
   will-change: transform;
 }
 
-.custom-cursor.visible { opacity: 1; }
-
-.custom-cursor.hovering {
-  width: 68px;
-  height: 68px;
+.custom-cursor.visible {
+  opacity: 1;
 }
 
-/* Keep the native cursor visible as a fallback */
+.custom-cursor.hovering {
+  width: 42px;
+  height: 42px;
+}
 
 /* RESPONSIVE */
 
@@ -941,6 +945,12 @@ footer {
   .menu-footer { font-size: 7px; }
 
   .contact h2 { font-size: 72px; }
+}
+
+@media (pointer: coarse) {
+  .custom-cursor {
+    display: none !important;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
