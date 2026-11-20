@@ -25,8 +25,7 @@ function setMenu(open) {
 
 if (menuButton && menuOverlay) {
   menuButton.addEventListener("click", () => {
-    const isOpen = menuButton.classList.contains("active");
-    setMenu(!isOpen);
+    setMenu(!menuButton.classList.contains("active"));
   });
 
   menuLinks.forEach(link => {
@@ -34,9 +33,7 @@ if (menuButton && menuOverlay) {
   });
 
   document.addEventListener("keydown", event => {
-    if (event.key === "Escape") {
-      setMenu(false);
-    }
+    if (event.key === "Escape") setMenu(false);
   });
 }
 
@@ -47,7 +44,6 @@ if (menuButton && menuOverlay) {
 
 if (window.matchMedia("(pointer: fine)").matches) {
 
-  // Create cursor automatically if it is missing
   let cursor = document.querySelector(".custom-cursor");
 
   if (!cursor) {
@@ -56,10 +52,8 @@ if (window.matchMedia("(pointer: fine)").matches) {
     document.body.appendChild(cursor);
   }
 
-  // Remove any old cursor label
   cursor.innerHTML = "";
 
-  // Rolls-Royce-inspired cursor styling
   Object.assign(cursor.style, {
     position: "fixed",
     top: "0",
@@ -77,6 +71,22 @@ if (window.matchMedia("(pointer: fine)").matches) {
     transition: "opacity .2s ease, width .35s ease, height .35s ease",
     willChange: "transform"
   });
+
+  /* HIDE THE ORIGINAL MOUSE CURSOR */
+
+  const cursorStyle = document.createElement("style");
+
+  cursorStyle.textContent = `
+    @media (pointer: fine) {
+      html, body, body *,
+      body *::before,
+      body *::after {
+        cursor: none !important;
+      }
+    }
+  `;
+
+  document.head.appendChild(cursorStyle);
 
   let mouseX = -100;
   let mouseY = -100;
@@ -118,15 +128,12 @@ if (window.matchMedia("(pointer: fine)").matches) {
   document.addEventListener("pointerleave", hideCursor);
   document.addEventListener("pointerenter", showCursor);
 
-  // Detect links and buttons, including dynamically added elements
   document.addEventListener("pointerover", event => {
     const target = event.target.closest(
       "a, button, .project-card, [role='button']"
     );
 
-    if (target) {
-      updateHoverState(true);
-    }
+    if (target) updateHoverState(true);
   });
 
   document.addEventListener("pointerout", event => {
@@ -139,7 +146,6 @@ if (window.matchMedia("(pointer: fine)").matches) {
     }
   });
 
-  // Smooth movement
   function animateCursor() {
     cursorX += (mouseX - cursorX) * 0.16;
     cursorY += (mouseY - cursorY) * 0.16;
