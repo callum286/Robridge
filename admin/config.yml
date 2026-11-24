@@ -1,0 +1,78 @@
+
+# yaml-language-server: $schema=https://unpkg.com/@sveltia/cms/schema/sveltia-cms.json
+
+backend:
+  name: github
+  repo: callum286/Robridge
+  branch: main
+
+media_folder: /images/uploads
+public_folder: /images/uploads
+
+collections:
+  - name: shop
+    label: Shop Management
+    files:
+      - name: products
+        label: Products
+        file: data/products.json
+        format: json
+        fields:
+          - label: Products
+            name: products
+            widget: list
+            fields:
+              - label: Product Name
+                name: name
+                widget: string
+
+              - label: Product URL
+                name: slug
+                widget: string
+
+              - label: Description
+                name: description
+                widget: text
+
+              - label: Category
+                name: category
+                widget: select
+                options:
+                  - Eyewear
+                  - Apparel
+                  - Accessories
+
+              - label: Price (£)
+                name: price
+                widget: number
+                value_type: float
+
+              - label: Product Images
+                name: images
+                widget: list
+                field:
+                  label: Image
+                  name: image
+                  widget: image
+
+              - label: Published
+                name: published
+                widget: boolean
+                default: false
+
+              - label: Variants
+                name: variants
+                widget: list
+                fields:
+                  - label: Variant Name
+                    name: name
+                    widget: string
+
+                  - label: Stock Quantity
+                    name: stock
+                    widget: number
+                    value_type: int
+
+                  - label: Stripe Payment Link
+                    name: stripe_link
+                    widget: string
