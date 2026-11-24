@@ -1,0 +1,26 @@
+
+{
+  "products": [
+    {
+      "name": "Robridge Performance Sunglasses",
+      "slug": "performance-sunglasses",
+      "description": "Performance sunglasses designed for life on and off the water.",
+      "category": "Eyewear",
+      "price": 45,
+      "images": [],
+      "published": false,
+      "variants": [
+        {
+          "name": "Blue Lenses",
+          "stock": 0,
+          "stripe_link": "https://buy.stripe.com/fZu9AS9fVa8G4T108H7EQ00"
+        },
+        {
+          "name": "Orange Lenses",
+          "stock": 0,
+          "stripe_link": "https://buy.stripe.com/8x2bJ04ZFdkSgBJ9Jh7EQ01"
+        }
+      ]
+    }
+  ]
+}
