@@ -14,12 +14,12 @@
       "variants": [
         {
           "name": "Blue Lenses",
-          "stock": 19,
+          "stock": 9,
           "stripe_link": "https://buy.stripe.com/fZu9AS9fVa8G4T108H7EQ00"
         },
         {
           "name": "Orange Lenses",
-          "stock": 19,
+          "stock": 9,
           "stripe_link": "https://buy.stripe.com/8x2bJ04ZFdkSgBJ9Jh7EQ01"
         }
       ]
